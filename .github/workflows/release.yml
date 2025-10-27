@@ -1,0 +1,39 @@
+name: Release
+
+on:
+  workflow_dispatch:
+    inputs:
+      platform:
+        description: 'Platform to submit (ios|android|both)'
+        required: true
+        default: 'both'
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - run: npm install
+      - uses: expo/expo-github-action@v8
+        with:
+          eas-version: latest
+          expo-version: latest
+          token: ${{ secrets.EXPO_TOKEN }}
+      - name: Build and submit
+        run: |
+          if [ "${{ github.event.inputs.platform }}" = "android" ]; then
+            eas build --platform android --profile production --non-interactive
+            eas submit --platform android --latest --non-interactive
+          elif [ "${{ github.event.inputs.platform }}" = "ios" ]; then
+            eas build --platform ios --profile production --non-interactive
+            eas submit --platform ios --latest --non-interactive
+          else
+            eas build --platform android --profile production --non-interactive
+            eas submit --platform android --latest --non-interactive
+            eas build --platform ios --profile production --non-interactive
+            eas submit --platform ios --latest --non-interactive
+          fi

@@ -1,0 +1,48 @@
+{
+  "expo": {
+    "name": "TagTrack",
+    "slug": "tagtrack",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "scheme": "tagtrack",
+    "userInterfaceStyle": "light",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#0D1B2A"
+    },
+    "assetBundlePatterns": ["**/*"],
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.example.tagtrack",
+      "nfc": {
+        "readerMode": true,
+        "alertMessage": "Hold your iPhone near the TagTrack NFC tag"
+      }
+    },
+    "android": {
+      "package": "com.example.tagtrack",
+      "permissions": ["android.permission.NFC", "android.permission.CAMERA", "android.permission.READ_EXTERNAL_STORAGE"],
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#0D1B2A"
+      }
+    },
+    "plugins": [
+      "react-native-nfc-manager",
+      "expo-localization",
+      "expo-image-picker",
+      ["sentry-expo", {
+        "organization": "your-org",
+        "project": "tagtrack",
+        "debug": false
+      }]
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "00000000-0000-0000-0000-000000000000"
+      }
+    }
+  }
+}

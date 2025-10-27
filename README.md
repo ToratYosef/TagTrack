@@ -92,6 +92,9 @@ service firebase.storage {
 
 ## Running the app
 ```bash
+# Install dependencies (needed once per clone)
+npm install
+
 # Start the Expo dev server
 npm run start
 
@@ -170,6 +173,7 @@ Static PNG wireframes are located in [`docs/wireframes`](docs/wireframes) (place
 - **Duplicate tag**: Cloud Function rejects duplicates. User is redirected to the existing item.
 - **Photo upload failures**: Retry from Settings > Pending sync.
 - **Expo + NFC on iOS**: Requires Expo prebuild (`npx expo prebuild`) to inject native modules.
+- **`expo: not found` when running npm scripts**: Install dependencies with `npm install` or use the global Expo CLI directly via `npx expo <command>`.
 
 ## Additional resources
 - [CONTRIBUTING.md](CONTRIBUTING.md)

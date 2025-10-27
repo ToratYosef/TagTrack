@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "862896954102",
+    "project_id": "hopeful-sound-406817",
+    "storage_bucket": "hopeful-sound-406817.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:862896954102:android:893054ec9a628b90a02ad7",
+        "android_client_info": {
+          "package_name": "com.tagtrack.app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDKD0xZu_ZGRbNmQLGWK6uPofRwoshrivY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
